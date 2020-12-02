@@ -1,0 +1,112 @@
+body{
+    background-color: #36393f;
+}
+
+#container{
+    width: 2000px;
+    height: auto;
+    margin: auto;
+}
+
+.scoreContainer{
+    width: 1000px;
+    height: 300px;
+    margin: 5% auto;
+    display: flex;
+}
+
+.player{
+    font-size: 50px;
+    text-align: center;
+    padding-top: 7%;
+    font-style: italic;
+    color: gray;
+}
+
+#User{
+    font-size: 250px;
+    width: 250px;
+    text-align: center;
+    font-style: italic;
+    color: #45e9ff;
+}
+
+#spacer{
+    font-size: 200px;
+    text-align: center;
+    color: gray;
+    font-style: italic;
+    width: 100px;
+}
+
+#IA{
+    font-size: 250px;
+    width: 250px;
+    text-align: center;
+    font-style: italic;
+    color: #ff30d6;
+}
+
+#result{
+    font-size: 70px;
+    color: gray;
+    font-style: italic;
+    text-align: center;
+}
+
+.buttonContainer{
+    display: flex;
+    width: 2000px;
+    height: 600px;
+    margin: 5% auto;
+}
+
+.button{
+    border-radius: 50%;
+    width: 500px;
+    height: 500px;
+    margin: 20px 60px;
+    position: relative;
+    border: white solid;
+    border-width: 10px;
+    box-shadow: 20px 20px 30px black;
+}
+
+#rock{
+    position: absolute;
+    top: 0;
+    margin-left: 120px;
+    margin-top: 65px;
+    filter: drop-shadow(20px 15px 9px black);
+}
+
+#paper{
+    position: absolute;
+    top: 0;
+    margin-left: 120px;
+    margin-top: 95px;
+    filter: drop-shadow(20px 15px 9px black);
+}
+
+#scissors{
+    position: absolute;
+    top: 0;
+    margin-left: 120px;
+    margin-top: 50px;
+    filter: drop-shadow(20px 15px 9px black);
+}
+
+.button:hover{
+    background-color: #202225;
+    border-color: #4b99a3;
+}
+
+/*correct y wrong se usan para colorear 
+el borde del boton*/
+.correct{
+    border-color: #4ba386;
+}
+
+.wrong{
+    border-color: #a34862;
+}
