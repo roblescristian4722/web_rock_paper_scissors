@@ -22,6 +22,7 @@ function ganar (opcionUsr, opcionIa) {
             tijeras.classList.add("correcto");
         break;
     }
+    // Regresamos a q0
 }
 
 function empatar (opcionUsr) {
@@ -37,6 +38,7 @@ function empatar (opcionUsr) {
             tijeras.classList.add("empate");
         break;
     }
+    // Regresamos a q0
 }
 
 function perder (opcionUsr, opcionIa) {
@@ -53,8 +55,8 @@ function perder (opcionUsr, opcionIa) {
             tijeras.classList.add("incorrecto");
         break;
     }
+    // Regresamos a q0
 }
-
 
 function clearClassList () {
     piedra.classList.remove("empate");
@@ -68,43 +70,42 @@ function clearClassList () {
     tijeras.classList.remove("incorrecto");
 }
 
+const q0 = 0;
+const q1 = 1;
+const q2 = 2;
+const q3 = 3;
 const q4 = 4;
 const q5 = 5;
 const q6 = 6;
-const q7 = 7;
-const q8 = 8;
 
 const matrizEstados = [
     /*piedra|papel|tijera|punto*/
-    /*q0*/[1, 2, 3, -1],
+    /*q0*/[q1, q2, q3, -1],
     /*q1*/[q6, q5, q4, -1],
     /*q2*/[q4, q6, q5, -1],
     /*q3*/[q5, q4, q6, -1],
-    /*q4*/[-1, -1, -1, 7],
-    /*q5*/[-1, -1, -1, 8],
-    /*q6*/[-1, -1, -1, -1],
-    /*q7*/[-1, -1, -1, -1],
-    /*q8*/[-1, -1, -1, -1]
+    /*q4*/[-1, -1, -1, q0],
+    /*q5*/[-1, -1, -1, q0],
+    /*q6*/[-1, -1, -1, -1]
 ]
 
 let opcionUsr = -1;
 let opcionIa = -1;
 
-
-// Estado q0
+// Se inicia en estado q0
 piedra.addEventListener('click', () => { opcionUsr = 0;
                                          clearClassList();
                                          calcularEstado();
                                         });
 
-// Estado q0
+// Se inicia en estado q0
 papel.addEventListener('click', () => { 
                                         opcionUsr = 1;
                                         clearClassList();
                                         calcularEstado();
                                       });
 
-// Estado q0
+// Se inicia en estado q0
 tijeras.addEventListener('click', () => {
                                           opcionUsr = 2;
                                           clearClassList();
@@ -113,8 +114,8 @@ tijeras.addEventListener('click', () => {
 
 function calcularEstado()
 {   
+    // Se encuentra en los estados q1|q2|q3
     opcionIa = iaSelection();
-
     if (matrizEstados[opcionUsr + 1][opcionIa] === q6)
         empatar(opcionUsr);
     else if (matrizEstados[opcionUsr + 1][opcionIa] === q4)
