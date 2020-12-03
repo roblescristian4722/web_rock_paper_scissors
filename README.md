@@ -1,1 +1,2 @@
-Aki ta el ridmi
+Para poder ejecutar el siguiente programa es necesario abrir el archivo index.html (con doble click), ya que es una página web.
+No se requieren de instalaciones adicionales, solamente requiere de un navegador.

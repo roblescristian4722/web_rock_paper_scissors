@@ -130,3 +130,15 @@ el borde del boton*/
 .incorrecto{
     border-color: #a34862;
 }
+
+footer {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    text-align: center;
+    font-family: 'Roboto';
+    font-size: 30px;
+    color: white;
+    width: 80%;
+    border-radius: 30px;
+}
