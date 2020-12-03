@@ -22,7 +22,8 @@ h1{
 #contenedor{
     width: 2000px;
     height: auto;
-    margin: auto;
+    margin: -5% auto;
+    transform: scale(0.7);
 }
 
 .marcador{
