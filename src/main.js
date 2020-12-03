@@ -1,22 +1,71 @@
 const piedra = document.getElementById("btnPiedra");
 const papel = document.getElementById("btnPapel");
 const tijeras = document.getElementById("btnTijeras");
-let puntosUsr = document.getElementById("usuario");
-let puntosIa = document.getElementById("IA");
+const puntosUsr = document.getElementById("usuario");
+const puntosIa = document.getElementById("IA");
+const resultado = document.getElementById("resultado");
+const opciones = ["piedra", "papel", "tijeras"];
 
 iaSelection = () => Math.floor(Math.random() * 10) % 3;
 
 function ganar (opcionUsr, opcionIa) {
     ++puntosUsr.innerHTML;
-    
+    resultado.innerHTML = `${opciones[opcionUsr]} le gana a ${opciones[opcionIa]}`;
+    switch(opcionUsr) {
+        case 0:
+            piedra.classList.add("correcto");
+        break;
+        case 1:
+            papel.classList.add("correcto");
+        break;
+        case 2:
+            tijeras.classList.add("correcto");
+        break;
+    }
 }
 
-function empatar (opcionUsr, opcionIa) {
-    
+function empatar (opcionUsr) {
+    resultado.innerHTML = `Hubo un empate, ambos eligieron ${opciones[opcionUsr]}`
+    switch(opcionUsr) {
+        case 0:
+            piedra.classList.add("empate");
+        break;
+        case 1:
+            papel.classList.add("empate");
+        break;
+        case 2:
+            tijeras.classList.add("empate");
+        break;
+    }
 }
 
 function perder (opcionUsr, opcionIa) {
     ++puntosIa.innerHTML;
+    resultado.innerHTML = `${opciones[opcionIa]} le gana a ${opciones[opcionUsr]}`;
+    switch(opcionUsr) {
+        case 0:
+            piedra.classList.add("incorrecto");
+        break;
+        case 1:
+            papel.classList.add("incorrecto");
+        break;
+        case 2:
+            tijeras.classList.add("incorrecto");
+        break;
+    }
+}
+
+
+function clearClassList () {
+    piedra.classList.remove("empate");
+    papel.classList.remove("empate");
+    tijeras.classList.remove("empate");
+    piedra.classList.remove("correcto");
+    papel.classList.remove("correcto");
+    tijeras.classList.remove("correcto");
+    piedra.classList.remove("incorrecto");
+    papel.classList.remove("incorrecto");
+    tijeras.classList.remove("incorrecto");
 }
 
 const q4 = 4;
@@ -43,22 +92,31 @@ let opcionIa = -1;
 
 
 // Estado q0
-piedra.addEventListener('click', () => {opcionUsr = 0; calcularEstado();});
+piedra.addEventListener('click', () => { opcionUsr = 0;
+                                         clearClassList();
+                                         calcularEstado();
+                                        });
 
 // Estado q0
-papel.addEventListener('click', () => { opcionUsr = 1; calcularEstado();});
+papel.addEventListener('click', () => { 
+                                        opcionUsr = 1;
+                                        clearClassList();
+                                        calcularEstado();
+                                      });
 
 // Estado q0
-tijeras.addEventListener('click', () => { opcionUsr = 2; calcularEstado();});
+tijeras.addEventListener('click', () => {
+                                          opcionUsr = 2;
+                                          clearClassList();
+                                          calcularEstado();
+                                        });
 
 function calcularEstado()
 {   
     opcionIa = iaSelection();
-    console.log("usr", opcionUsr);
-    console.log("IA", opcionIa);
-    
+
     if (matrizEstados[opcionUsr + 1][opcionIa] === q6)
-        empatar(opcionUsr, opcionIa);
+        empatar(opcionUsr);
     else if (matrizEstados[opcionUsr + 1][opcionIa] === q4)
         ganar(opcionUsr, opcionIa);
     else if (matrizEstados[opcionUsr + 1][opcionIa] === q5)

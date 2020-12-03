@@ -89,7 +89,7 @@ h1{
     box-shadow: 20px 20px 30px black;
 }
 
-#piedra{
+#papel{
     position: absolute;
     top: 0;
     margin-left: 120px;
@@ -97,7 +97,7 @@ h1{
     filter: drop-shadow(20px 15px 9px black);
 }
 
-#papel{
+#piedra{
     position: absolute;
     top: 0;
     margin-left: 120px;
@@ -115,13 +115,16 @@ h1{
 
 .boton:hover{
     background-color: #202225;
-    border-color: #4b99a3;
 }
 
 /*correcto e incorrecto se usan para colorear 
 el borde del boton*/
 .correcto{
     border-color: #4ba386;
+}
+
+.empate{
+    border-color: #d19b54;
 }
 
 .incorrecto{
