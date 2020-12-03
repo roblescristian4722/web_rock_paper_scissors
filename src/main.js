@@ -1,21 +1,22 @@
-const piedra = document.getElementById("piedra");
-const papel = document.getElementById("papel");
-const tijeras = document.getElementById("tijera");
-let puntosUsr = 0;
-let puntosIa = 0;
+const piedra = document.getElementById("btnPiedra");
+const papel = document.getElementById("btnPapel");
+const tijeras = document.getElementById("btnTijeras");
+let puntosUsr = document.getElementById("usuario");
+let puntosIa = document.getElementById("IA");
 
 iaSelection = () => Math.floor(Math.random() * 10) % 3;
 
-ganar = () => {
-    puntosUsr++;
-}
-
-empatar = () => {
+function ganar (opcionUsr, opcionIa) {
+    ++puntosUsr.innerHTML;
     
 }
 
-perder = () => {
-    puntosIa++;
+function empatar (opcionUsr, opcionIa) {
+    
+}
+
+function perder (opcionUsr, opcionIa) {
+    ++puntosIa.innerHTML;
 }
 
 const q4 = 4;
@@ -37,26 +38,29 @@ const matrizEstados = [
     /*q8*/[-1, -1, -1, -1]
 ]
 
-function main()
+let opcionUsr = -1;
+let opcionIa = -1;
+
+
+// Estado q0
+piedra.addEventListener('click', () => {opcionUsr = 0; calcularEstado();});
+
+// Estado q0
+papel.addEventListener('click', () => { opcionUsr = 1; calcularEstado();});
+
+// Estado q0
+tijeras.addEventListener('click', () => { opcionUsr = 2; calcularEstado();});
+
+function calcularEstado()
 {   
-    let opcionUsr = -1;
-    let opcionIa = iaSelection();
-
-    // Estado q0
-    rock.addEventListener('click', () => opcionUsr = 0);
-
-    // Estado q0
-    paper.addEventListener('click', () => opcionUsr = 1);
-
-    // Estado q0
-    scissors.addEventListener('click', () => opcionUsr = 2);
-
+    opcionIa = iaSelection();
+    console.log("usr", opcionUsr);
+    console.log("IA", opcionIa);
+    
     if (matrizEstados[opcionUsr + 1][opcionIa] === q6)
-        empatar();
+        empatar(opcionUsr, opcionIa);
     else if (matrizEstados[opcionUsr + 1][opcionIa] === q4)
-        ganar();
+        ganar(opcionUsr, opcionIa);
     else if (matrizEstados[opcionUsr + 1][opcionIa] === q5)
-        perder();
+        perder(opcionUsr, opcionIa);
 }
-
-main();

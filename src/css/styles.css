@@ -19,20 +19,20 @@ h1{
     font-size: 60px;
 }
 
-#container{
+#contenedor{
     width: 2000px;
     height: auto;
     margin: auto;
 }
 
-.scoreContainer{
+.marcador{
     width: 1000px;
     height: 300px;
     margin: 5% auto;
     display: flex;
 }
 
-.player{
+.jugador{
     font-size: 50px;
     text-align: center;
     padding-top: 7%;
@@ -40,7 +40,7 @@ h1{
     color: gray;
 }
 
-#User{
+#usuario{
     font-size: 250px;
     width: 250px;
     text-align: center;
@@ -48,7 +48,7 @@ h1{
     color: #45e9ff;
 }
 
-#spacer{
+#separador{
     font-size: 200px;
     text-align: center;
     color: gray;
@@ -64,21 +64,21 @@ h1{
     color: #ff30d6;
 }
 
-#result{
+#resultado{
     font-size: 70px;
     color: gray;
     font-style: italic;
     text-align: center;
 }
 
-.buttonContainer{
+.contenedorBotones{
     display: flex;
     width: 2000px;
     height: 600px;
     margin: 5% auto;
 }
 
-.button{
+.boton{
     border-radius: 50%;
     width: 500px;
     height: 500px;
@@ -89,7 +89,7 @@ h1{
     box-shadow: 20px 20px 30px black;
 }
 
-#rock{
+#piedra{
     position: absolute;
     top: 0;
     margin-left: 120px;
@@ -97,7 +97,7 @@ h1{
     filter: drop-shadow(20px 15px 9px black);
 }
 
-#paper{
+#papel{
     position: absolute;
     top: 0;
     margin-left: 120px;
@@ -105,7 +105,7 @@ h1{
     filter: drop-shadow(20px 15px 9px black);
 }
 
-#scissors{
+#tijeras{
     position: absolute;
     top: 0;
     margin-left: 120px;
@@ -113,17 +113,17 @@ h1{
     filter: drop-shadow(20px 15px 9px black);
 }
 
-.button:hover{
+.boton:hover{
     background-color: #202225;
     border-color: #4b99a3;
 }
 
-/*correct y wrong se usan para colorear 
+/*correcto e incorrecto se usan para colorear 
 el borde del boton*/
-.correct{
+.correcto{
     border-color: #4ba386;
 }
 
-.wrong{
+.incorrecto{
     border-color: #a34862;
 }
